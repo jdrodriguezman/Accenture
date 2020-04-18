@@ -3,25 +3,27 @@ package com.backend.demo.model;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 
-class ProductDTOTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class ProductsDTOTest {
+
+    @Test
+    void setListProducts() {
+        Assert.assertNotNull(new ProductsDTO().toString());
+    }
 
     @Test
     void withParameter() {
-        ProductDTO productDTO = new ProductDTO(
-                "Postres",
-                "Delicioso postre para la tarde",
-                "B01",
-                "11-06-2019",
-                "Postre Brazo de Reina",
-                3700);
-        Assert.assertNotNull(productDTO);
+        ProductsDTO productsDTO = new ProductsDTO(new ArrayList<>(),1220);
+        Assert.assertNotNull(productsDTO);
     }
 
     @Test
     void withoutParameter() {
-        ProductDTO productDTO = new ProductDTO();
-        Assert.assertNotNull(productDTO);
+        ProductsDTO productsDTO = new ProductsDTO();
+        Assert.assertNotNull(productsDTO);
     }
 
     @Test
@@ -33,7 +35,10 @@ class ProductDTOTest {
         productDTO.setInitdate("11-06-2019");
         productDTO.setProductname("Postre Brazo de Reina");
         productDTO.setValue(3700);
-        Assert.assertNotNull(productDTO);
+        ArrayList<ProductDTO> list = new ArrayList<>();
+        list.add(productDTO);
+        ProductsDTO productsDTO = new ProductsDTO(list,1220);
+        Assert.assertNotNull(productsDTO);
     }
 
     @Test
@@ -45,12 +50,15 @@ class ProductDTOTest {
         productDTO.getInitdate();
         productDTO.getProductname();
         productDTO.getValue();
-        Assert.assertNotNull(productDTO);
+        ArrayList<ProductDTO> list = new ArrayList<>();
+        list.add(productDTO);
+        ProductsDTO productsDTO = new ProductsDTO(list,1220);
+        Assert.assertNotNull(productsDTO);
     }
 
     @Test
     void testToString() {
-        Assert.assertNotNull(new ProductDTO().toString());
+        Assert.assertNotNull(new ProductsDTO().toString());
     }
 
 }
