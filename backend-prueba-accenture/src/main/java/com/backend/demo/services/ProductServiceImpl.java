@@ -3,6 +3,8 @@ package com.backend.demo.services;
 import com.backend.demo.adapter.IEndpointManager;
 import com.backend.demo.commons.constans.EndpointApi;
 import com.backend.demo.model.ProductDTO;
+import com.backend.demo.model.ProductsDTO;
+import com.backend.demo.util.HelpeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -54,11 +56,13 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public ResponseEntity<String> getAllProductsImpl() {
+    public ResponseEntity getAllProductsImpl() {
         try{
             String url = EndpointApi.URL_JSON;
             ResponseEntity responseEntity = endpointManager.endpointConsumerClient(url, String.class, HttpMethod.GET,null);
-            return responseEntity;
+            ProductsDTO productsDTO = HelpeUtil.totalValue(responseEntity);
+            ResponseEntity<ProductsDTO> response = new ResponseEntity(productsDTO,responseEntity.getHeaders(),responseEntity.getStatusCode());
+            return response;
         }catch (HttpClientErrorException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR.value())
                     .body(e.getMessage());
