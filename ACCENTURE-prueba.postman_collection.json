@@ -31,7 +31,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/products/-M5EWN3GSWS92TNUux26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"-M5EWN3GSWS92TNUux26"
+					]
 				}
 			},
 			"response": []
@@ -43,7 +52,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"category\": \"andres\",\n    \"description\": \"Delicioso postre para la tarde\",\n    \"identification\": \"B01\",\n    \"initdate\": \"11-06-2019\",\n    \"productname\": \"Postre Brazo de Reina\",\n    \"value\": 3700\n}",
+					"raw": "{\n    \"category\": \"Jarabe dulce\",\n    \"description\": \"Delicioso postre de jarabe\",\n    \"identification\": \"778\",\n    \"initdate\": \"11-06-2019\",\n    \"productname\": \"Postre Brazo de Reina\",\n    \"value\": 2000\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -72,7 +81,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"category\": \"andres\",\n    \"description\": \"Delicioso postre para la tarde\",\n    \"identification\": \"B01\",\n    \"initdate\": \"11-06-2019\",\n    \"productname\": \"Postre Brazo de Reina\",\n    \"value\": 3700\n}",
+					"raw": "{\n    \"category\": \"Jarabe dulce\",\n    \"description\": \"Delicioso postre de jarabe\",\n    \"identification\": \"778\",\n    \"initdate\": \"11-06-2019\",\n    \"productname\": \"Postre Brazo de Reina\",\n    \"value\": 2800\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -80,7 +89,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/products/{id}",
+					"raw": "http://localhost:8080/products/-M5EWN3GSWS92TNUux26",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -88,7 +97,7 @@
 					"port": "8080",
 					"path": [
 						"products",
-						"{id}"
+						"-M5EWN3GSWS92TNUux26"
 					]
 				}
 			},
@@ -100,7 +109,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/products/{id}",
+					"raw": "http://localhost:8080/products/-M5EWN3GSWS92TNUux26",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -108,7 +117,7 @@
 					"port": "8080",
 					"path": [
 						"products",
-						"{id}"
+						"-M5EWN3GSWS92TNUux26"
 					]
 				}
 			},
